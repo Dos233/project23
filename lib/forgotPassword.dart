@@ -141,16 +141,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       "email": _email,
       "password": _password,
     }).then((res) {
-      print(res.body.contains);
       Navigator.of(context).pop();
-      if (res.body.contains("register success")) {
+      if (res.body.contains("success")) {
         Toast.show(
           "Reset password success",
           context,
           duration: 4,
           gravity: Toast.BOTTOM,
         );
-        Navigator.of(context).pop();
       } else {
         Toast.show(
           "Reset password failed. Not registered email.",
